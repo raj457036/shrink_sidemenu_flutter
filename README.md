@@ -8,35 +8,35 @@ There are 8 configuration of Liquid shrink side menu
 
 #### 1. SlideNRotate
 
-<img alt="SlideNRotate" src="./assets/slide_n_rotate.jpg" height="550">
+<img alt="SlideNRotate" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/slide_n_rotate.jpg" height="550">
 
 #### 2. SlideNRotate Inverse
 
-<img alt="SlideNRotate Inverse" src="./assets/slide_n_rotate_inv.jpg" height="550">
+<img alt="SlideNRotate Inverse" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/slide_n_rotate_inv.jpg" height="550">
 
 #### 3. ShrinkNRotate
 
-<img alt="ShrikNRotate" src="./assets/shrink_n_rotate.jpg" height="550">
+<img alt="ShrikNRotate" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/shrink_n_rotate.jpg" height="550">
 
 #### 4. ShrinkNRotate Inverse
 
-<img alt="ShrinkNRotate Inverse" src="./assets/shrink_n_rotate_inv.jpg" height="550">
+<img alt="ShrinkNRotate Inverse" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/shrink_n_rotate_inv.jpg" height="550">
 
 #### 5. Slide
 
-<img alt="Slide" src="./assets/slide.jpg" height="550">
+<img alt="Slide" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/slide.jpg" height="550">
 
 #### 6. Slide Inverse
 
-<img alt="Slide Inverse" src="./assets/slide_inv.jpg" height="550">
+<img alt="Slide Inverse" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/slide_inv.jpg" height="550">
 
 #### 7. ShrinkNSlide
 
-<img alt="ShrinkNSlide" src="./assets/shrink_n_slide.jpg" height="550">
+<img alt="ShrinkNSlide" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/shrink_n_slide.jpg" height="550">
 
 #### 8. ShrinkNSlide Inverse
 
-<img alt="ShrinkNSlide" src="./assets/shrink_n_slide_inv.jpg" height="550">
+<img alt="ShrinkNSlide" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/shrink_n_slide_inv.jpg" height="550">
 
 ## Getting Started
 
