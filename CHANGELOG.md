@@ -1,3 +1,7 @@
+## 1.0.0+2
+
+- Added example
+
 ## 1.0.0+1
 
 - Initial Release with 4 different Sidemenu
