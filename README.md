@@ -68,9 +68,9 @@ SideMenu(
               onPressed: () {
                 final _state = _sideMenuKey.currentState;
                 if (_state.isOpened)
-                  _state.closeDrawer(); // close side menu
+                  _state.closeSideMenu(); // close side menu
                 else
-                  _state.openDrawer();// open side menu
+                  _state.openSideMenu();// open side menu
               },
             ),
         ...
