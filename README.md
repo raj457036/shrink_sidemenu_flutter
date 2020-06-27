@@ -2,6 +2,8 @@
 
 A Side Menu plugin for flutter and compatible with [liquid ui](https://pub.dev/packages/liquid_ui)
 
+<img alt="Liquid Ui Shrink Side Menu for flutter" src="https://github.com/raj457036/shrink_sidemenu_flutter/raw/master/assets/demo.png">
+
 ## Side Menu Types
 
 There are 8 configuration of Liquid shrink side menu
