@@ -36,13 +36,13 @@ class SideMenu extends StatefulWidget {
   /// Background color of the side menu
   ///
   /// default: Color(0xFF112473)
-  final Color background;
+  final Color? background;
 
   /// Radius for the child when side menu opens
-  final BorderRadius radius;
+  final BorderRadius? radius;
 
   /// Close Icon
-  final Icon closeIcon;
+  final Icon? closeIcon;
 
   /// Menu that should be in side menu
   ///
@@ -95,29 +95,25 @@ class SideMenu extends StatefulWidget {
   ///Set `inverse` equals `true` to create end sidemenu
   ///
   const SideMenu({
-    Key key,
-    this.child,
-    this.background,
-    this.radius,
+    Key? key,
+    required this.child,
+    required this.background,
+    required this.radius,
     this.closeIcon = const Icon(
       Icons.close,
       color: const Color(0xFFFFFFFF),
     ),
-    this.menu,
+    required this.menu,
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
-  })  : assert(child != null),
-        assert(menu != null),
-        assert(type != null),
-        assert(inverse != null),
-        assert(maxMenuWidth != null && maxMenuWidth > 0),
+  })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
         super(key: key);
 
-  static SideMenuState of(BuildContext context) {
+  static SideMenuState? of(BuildContext? context) {
     assert(context != null);
-    return context.findAncestorStateOfType<SideMenuState>();
+    return context?.findAncestorStateOfType<SideMenuState>();
   }
 
   double degToRad(double deg) => (pi / 180) * deg;
@@ -129,14 +125,14 @@ class SideMenu extends StatefulWidget {
     if (type == SideMenuType.shrikNRotate)
       return ShrinkSlideRotateSideMenuState();
     if (type == SideMenuType.shrinkNSlide) return ShrinkSlideSideMenuState();
-    if (type == SideMenuType.slide) return SlideSideMenuState();
     if (type == SideMenuType.slideNRotate) return SlideRotateSideMenuState();
-    return null;
+    if (type == SideMenuType.slide) return SlideSideMenuState();
+    return SlideSideMenuState();
   }
 }
 
 abstract class SideMenuState extends State<SideMenu> {
-  bool _opened;
+  late bool _opened;
 
   /// open SideMenu
   void openSideMenu() => setState(() => _opened = true);
@@ -160,7 +156,7 @@ abstract class SideMenuState extends State<SideMenu> {
             left: widget.inverse ? null : 0,
             right: widget.inverse ? 0 : null,
             child: IconButton(
-              icon: widget.closeIcon,
+              icon: widget.closeIcon!,
               onPressed: closeSideMenu,
             ),
           )

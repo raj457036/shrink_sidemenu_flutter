@@ -13,7 +13,7 @@ class SlideSideMenuState extends SideMenuState {
         fit: StackFit.expand,
         children: [
           Positioned(
-            top: statusBarHeight + (widget?.closeIcon?.size ?? 25.0) * 2,
+            top: statusBarHeight + (widget.closeIcon?.size ?? 25.0) * 2,
             width: min(size.width * 0.70, widget.maxMenuWidth),
             right: widget._inverse == 1 ? null : 0,
             child: widget.menu,

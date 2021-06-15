@@ -13,7 +13,7 @@ class ShrinkSlideSideMenuState extends SideMenuState {
         fit: StackFit.expand,
         children: [
           Positioned(
-            top: statusBarHeight + (widget?.closeIcon?.size ?? 25.0) * 2,
+            top: statusBarHeight + (widget.closeIcon?.size ?? 25.0) * 2,
             bottom: 0.0,
             width: min(size.width * 0.70, widget.maxMenuWidth),
             right: widget._inverse == 1 ? null : 0,
@@ -57,7 +57,7 @@ class ShrinkSlideSideMenuState extends SideMenuState {
                 widget._inverse *
                 (widget.inverse ? 0.6 : 0.9),
             (size.height * 0.1))
-        ..scale(widget.maxMenuWidth / size.width ?? 0.8, 0.8);
+        ..scale(widget.maxMenuWidth / size.width, 0.8);
     }
     return Matrix4.identity();
   }

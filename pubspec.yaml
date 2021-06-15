@@ -1,13 +1,13 @@
 name: shrink_sidemenu
 description: A Side Menu plugin for flutter and compatible with liquid ui.
 
-version: 1.0.0+3
+version: 1.0.0+4-null-safety
 
 repository: https://github.com/raj457036/shrink_sidemenu_flutter
 homepage: https://github.com/raj457036/shrink_sidemenu_flutter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.13.0 <3.0.0"
 
 dependencies:
   flutter:
