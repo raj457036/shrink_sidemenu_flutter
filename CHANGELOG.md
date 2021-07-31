@@ -1,3 +1,8 @@
+
+## 2.0.0+1-null-safety
+
+- added support for null-safety
+
 ## 1.0.0+3
 
 - Added example
@@ -6,7 +11,3 @@
 
 - Initial Release with 4 different Sidemenu
 - Compatible with [Liquid ui](https://pub.dev/packages/liquid_ui) for flutter
-
-## 1.0.0+4-null-safety
-
-- added support for null-safety
