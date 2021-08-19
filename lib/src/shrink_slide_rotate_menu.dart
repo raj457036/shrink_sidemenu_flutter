@@ -20,19 +20,22 @@ class ShrinkSlideRotateSideMenuState extends SideMenuState {
             child: widget.menu,
           ),
           _getCloseButton(statusBarHeight),
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 350),
-            curve: Curves.fastLinearToSlowEaseIn,
-            transform: _getMatrix4(size),
-            decoration: BoxDecoration(
-                borderRadius: _getBorderRadius(),
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 18.0),
-                      color: Colors.black12,
-                      blurRadius: 32.0)
-                ]),
-            child: _getChild(),
+          IgnorePointer(
+            ignoring: widget.blockInput && _opened,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.fastLinearToSlowEaseIn,
+              transform: _getMatrix4(size),
+              decoration: BoxDecoration(
+                  borderRadius: _getBorderRadius(),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 18.0),
+                        color: Colors.black12,
+                        blurRadius: 32.0)
+                  ]),
+              child: _getChild(),
+            ),
           ),
         ],
       ),

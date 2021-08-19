@@ -19,12 +19,15 @@ class SlideSideMenuState extends SideMenuState {
             child: widget.menu,
           ),
           _getCloseButton(statusBarHeight),
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 350),
-            curve: Curves.fastLinearToSlowEaseIn,
-            alignment: Alignment.topLeft,
-            transform: _getMatrix4(size),
-            child: widget.child,
+          IgnorePointer(
+            ignoring: widget.blockInput && _opened,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.fastLinearToSlowEaseIn,
+              alignment: Alignment.topLeft,
+              transform: _getMatrix4(size),
+              child: widget.child,
+            ),
           ),
         ],
       ),
