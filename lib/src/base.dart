@@ -62,6 +62,9 @@ class SideMenu extends StatefulWidget {
   /// 4. slide
   final SideMenuType type;
 
+  /// Blocks inputs on the main page when the side menu is open
+  final bool blockInput;
+
   /// Liquid Shrink Side Menu is compatible with [Liquid ui](https://pub.dev/packages/liquid_ui)
   ///
   /// Create a SideMenu / Drawer
@@ -106,6 +109,7 @@ class SideMenu extends StatefulWidget {
     required this.menu,
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
+    this.blockInput = false,
     bool inverse = false,
   })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
