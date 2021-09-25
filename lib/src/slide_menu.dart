@@ -21,15 +21,26 @@ class SlideSideMenuState extends SideMenuState {
           _getCloseButton(statusBarHeight),
           AnimatedContainer(
             duration: const Duration(milliseconds: 350),
-            curve: Curves.fastLinearToSlowEaseIn,
+            curve: widget.curve,
             alignment: Alignment.topLeft,
             transform: _getMatrix4(size),
-            child: widget.child,
+            child: _getChild(),
           ),
         ],
       ),
     );
   }
+
+  Widget _getChild() => Stack(
+    children: [
+      widget.child,
+      if (_opened)
+        GestureDetector(
+          onTap: closeSideMenu,
+          child: Container(color: widget.barrierColor ?? Colors.transparent),
+        ),
+    ],
+  );
 
   Matrix4 _getMatrix4(Size size) {
     if (_opened) {

@@ -62,6 +62,16 @@ class SideMenu extends StatefulWidget {
   /// 4. slide
   final SideMenuType type;
 
+  /// If true, shows a colored mask [barrierColor] over the child as SideMenu open and tap to close SideMenu.
+  /// This can also avoid gestures in child part.
+  final bool isDismissible;
+
+  /// If [isDismissible] is true, custom the mask color.
+  final Color? barrierColor;
+
+  /// Custom animation curve.
+  final Curve curve;
+
   /// Liquid Shrink Side Menu is compatible with [Liquid ui](https://pub.dev/packages/liquid_ui)
   ///
   /// Create a SideMenu / Drawer
@@ -107,6 +117,9 @@ class SideMenu extends StatefulWidget {
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
+    this.isDismissible = false,
+    this.barrierColor,
+    this.curve = Curves.fastLinearToSlowEaseIn,
   })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
         super(key: key);
