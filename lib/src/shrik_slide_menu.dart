@@ -35,15 +35,17 @@ class ShrinkSlideSideMenuState extends SideMenuState {
     );
   }
 
-  Widget _getChild() => _opened
-      ? SafeArea(
-          child: ClipRRect(
-            borderRadius: _getBorderRadius(),
-            clipBehavior: Clip.antiAlias,
-            child: widget.child,
-          ),
-        )
-      : widget.child;
+  Widget _getChild() => SafeArea(
+        top: _opened,
+        bottom: _opened,
+        right: _opened,
+        left: _opened,
+        child: ClipRRect(
+          borderRadius: _getBorderRadius(),
+          clipBehavior: Clip.antiAlias,
+          child: widget.child,
+        ),
+      );
 
   BorderRadius _getBorderRadius() => _opened
       ? (widget.radius ?? BorderRadius.circular(34.0))
