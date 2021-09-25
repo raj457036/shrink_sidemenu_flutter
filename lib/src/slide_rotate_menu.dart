@@ -22,7 +22,7 @@ class SlideRotateSideMenuState extends SideMenuState {
           _getCloseButton(statusBarHeight),
           AnimatedContainer(
             duration: const Duration(milliseconds: 350),
-            curve: Curves.fastLinearToSlowEaseIn,
+            curve: widget.curve,
             transform: _getMatrix4(size),
             decoration: BoxDecoration(
                 borderRadius: _getBorderRadius(),
@@ -39,15 +39,26 @@ class SlideRotateSideMenuState extends SideMenuState {
     );
   }
 
-  Widget _getChild() => _opened
-      ? SafeArea(
-          child: ClipRRect(
-            borderRadius: _getBorderRadius(),
-            clipBehavior: Clip.antiAlias,
-            child: widget.child,
+  Widget _getChild() => Stack(
+        children: [
+          SafeArea(
+            top: _opened,
+            bottom: _opened,
+            right: _opened,
+            left: _opened,
+            child: ClipRRect(
+              borderRadius: _getBorderRadius(),
+              clipBehavior: Clip.antiAlias,
+              child: widget.child,
+            ),
           ),
-        )
-      : widget.child;
+          if (_opened)
+            GestureDetector(
+              onTap: closeSideMenu,
+              child: Container(color: widget.barrierColor ?? Colors.transparent),
+            ),
+        ],
+      );
 
   BorderRadius _getBorderRadius() => _opened
       ? (widget.radius ?? BorderRadius.circular(34.0))
