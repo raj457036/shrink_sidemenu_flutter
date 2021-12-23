@@ -105,10 +105,10 @@ packages:
   shrink_sidemenu:
     dependency: "direct main"
     description:
-      path: "../.."
+      path: ".."
       relative: true
     source: path
-    version: "2.0.0+1-null-safety"
+    version: "2.0.0+2-null-safety"
   sky_engine:
     dependency: transitive
     description: flutter

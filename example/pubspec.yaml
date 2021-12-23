@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   shrink_sidemenu:
-    path: ../../
+    path: ../
   
 
 
