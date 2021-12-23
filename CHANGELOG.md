@@ -1,3 +1,7 @@
+## 2.0.0+2-null-safety
+
+- added improved example
+- removed `required` from nullable fields
 
 ## 2.0.0+1-null-safety
 
