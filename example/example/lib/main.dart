@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
@@ -212,5 +211,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-```

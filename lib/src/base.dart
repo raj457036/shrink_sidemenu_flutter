@@ -62,6 +62,8 @@ class SideMenu extends StatefulWidget {
   /// 4. slide
   final SideMenuType type;
 
+  final void Function(bool isOpened)? onChange;
+
   /// Liquid Shrink Side Menu is compatible with [Liquid ui](https://pub.dev/packages/liquid_ui)
   ///
   /// Create a SideMenu / Drawer
@@ -97,8 +99,8 @@ class SideMenu extends StatefulWidget {
   const SideMenu({
     Key? key,
     required this.child,
-    required this.background,
-    required this.radius,
+    this.background,
+    this.radius,
     this.closeIcon = const Icon(
       Icons.close,
       color: const Color(0xFFFFFFFF),
@@ -107,6 +109,7 @@ class SideMenu extends StatefulWidget {
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
+    this.onChange,
   })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
         super(key: key);
@@ -135,10 +138,22 @@ abstract class SideMenuState extends State<SideMenu> {
   late bool _opened;
 
   /// open SideMenu
-  void openSideMenu() => setState(() => _opened = true);
+  void openSideMenu() {
+    setState(() => _opened = true);
+
+    if (widget.onChange != null) {
+      widget.onChange!(true);
+    }
+  }
 
   /// close SideMenu
-  void closeSideMenu() => setState(() => _opened = false);
+  void closeSideMenu() {
+    setState(() => _opened = false);
+
+    if (widget.onChange != null) {
+      widget.onChange!(false);
+    }
+  }
 
   /// get current status of sidemenu
   bool get isOpened => _opened;
