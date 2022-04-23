@@ -49,7 +49,7 @@ class SideMenu extends StatefulWidget {
   /// generally a [SingleChildScrollView] with a [Column]
   final Widget menu;
 
-  /// Maximum constrints for menu width
+  /// Maximum constraints for menu width
   ///
   /// default: `275.0`
   final double maxMenuWidth;
@@ -96,14 +96,14 @@ class SideMenu extends StatefulWidget {
   ///
   const SideMenu({
     Key key,
-    this.child,
+    @required this.child,
     this.background,
     this.radius,
     this.closeIcon = const Icon(
       Icons.close,
-      color: const Color(0xFFFFFFFF),
+      color: Color(0xFFFFFFFF),
     ),
-    this.menu,
+    @required this.menu,
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
@@ -125,13 +125,20 @@ class SideMenu extends StatefulWidget {
   bool get inverse => _inverse == -1;
 
   @override
+  // ignore: no_logic_in_create_state
   SideMenuState createState() {
-    if (type == SideMenuType.shrikNRotate)
-      return ShrinkSlideRotateSideMenuState();
-    if (type == SideMenuType.shrinkNSlide) return ShrinkSlideSideMenuState();
-    if (type == SideMenuType.slide) return SlideSideMenuState();
-    if (type == SideMenuType.slideNRotate) return SlideRotateSideMenuState();
-    return null;
+    switch (type) {
+      case SideMenuType.shrikNRotate:
+        return ShrinkSlideRotateSideMenuState();
+      case SideMenuType.shrinkNSlide:
+        return ShrinkSlideSideMenuState();
+      case SideMenuType.slideNRotate:
+        return SlideSideMenuState();
+      case SideMenuType.slide:
+        return SlideRotateSideMenuState();
+    }
+
+    throw UnsupportedError('Unsupported SideMenuType.');
   }
 }
 

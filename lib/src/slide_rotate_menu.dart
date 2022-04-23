@@ -26,7 +26,7 @@ class SlideRotateSideMenuState extends SideMenuState {
             transform: _getMatrix4(size),
             decoration: BoxDecoration(
                 borderRadius: _getBorderRadius(),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       offset: Offset(0, 18.0),
                       color: Colors.black12,
