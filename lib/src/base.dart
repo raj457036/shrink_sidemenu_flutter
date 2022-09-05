@@ -38,6 +38,8 @@ class SideMenu extends StatefulWidget {
   /// default: Color(0xFF112473)
   final Color background;
 
+  final LinearGradient backgroundGradient;
+
   /// Radius for the child when side menu opens
   final BorderRadius radius;
 
@@ -98,6 +100,7 @@ class SideMenu extends StatefulWidget {
     Key key,
     this.child,
     this.background,
+    this.backgroundGradient,
     this.radius,
     this.closeIcon = const Icon(
       Icons.close,
@@ -126,8 +129,7 @@ class SideMenu extends StatefulWidget {
 
   @override
   SideMenuState createState() {
-    if (type == SideMenuType.shrikNRotate)
-      return ShrinkSlideRotateSideMenuState();
+    if (type == SideMenuType.shrikNRotate) return ShrinkSlideRotateSideMenuState();
     if (type == SideMenuType.shrinkNSlide) return ShrinkSlideSideMenuState();
     if (type == SideMenuType.slide) return SlideSideMenuState();
     if (type == SideMenuType.slideNRotate) return SlideRotateSideMenuState();

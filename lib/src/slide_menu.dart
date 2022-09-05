@@ -8,7 +8,7 @@ class SlideSideMenuState extends SideMenuState {
     final statusBarHeight = mq.padding.top;
 
     return Material(
-      color: widget.background ?? const Color(0xFF112473),
+      color: Colors.red,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -33,9 +33,7 @@ class SlideSideMenuState extends SideMenuState {
 
   Matrix4 _getMatrix4(Size size) {
     if (_opened) {
-      return Matrix4.identity()
-        ..translate(
-            min(size.width * 0.70, widget.maxMenuWidth) * widget._inverse);
+      return Matrix4.identity()..translate(min(size.width * 0.70, widget.maxMenuWidth) * widget._inverse);
     }
     return Matrix4.identity();
   }

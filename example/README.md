@@ -49,6 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _endSideMenuKey,
       inverse: true, // end side menu
       background: Colors.green[700],
+      backgroundGradient: LinearGradient(
+        colors: [Colors.blue, Colors.blue[700]],
+      ),
       type: SideMenuType.slideNRotate,
       menu: buildMenu(),
       child: SideMenu(
