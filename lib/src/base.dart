@@ -28,6 +28,8 @@ enum SideMenuType {
 class SideMenu extends StatefulWidget {
   final int _inverse;
 
+  final int _closeIconPositionInverse;
+
   /// Widget that should be enclosed in sidemenu
   ///
   /// generally a [Scaffold] and should not be `null`
@@ -109,9 +111,11 @@ class SideMenu extends StatefulWidget {
     this.type = SideMenuType.shrikNRotate,
     this.maxMenuWidth = 275.0,
     bool inverse = false,
+    bool closeIconPositionInverse = false,
     this.onChange,
   })  : assert(maxMenuWidth > 0),
         _inverse = inverse ? -1 : 1,
+        _closeIconPositionInverse = closeIconPositionInverse ? -1 : 1,
         super(key: key);
 
   static SideMenuState? of(BuildContext? context) {
@@ -122,6 +126,8 @@ class SideMenu extends StatefulWidget {
   double degToRad(double deg) => (pi / 180) * deg;
 
   bool get inverse => _inverse == -1;
+
+  bool get closeIconPositionInverse => _closeIconPositionInverse == -1;
 
   @override
   SideMenuState createState() {
@@ -168,8 +174,8 @@ abstract class SideMenuState extends State<SideMenu> {
     return widget.closeIcon != null
         ? Positioned(
             top: statusBarHeight,
-            left: widget.inverse ? null : 0,
-            right: widget.inverse ? 0 : null,
+            left: widget.closeIconPositionInverse ? null : 0,
+            right:  widget.closeIconPositionInverse ? 0 : null,
             child: IconButton(
               icon: widget.closeIcon!,
               onPressed: closeSideMenu,
