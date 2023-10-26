@@ -16,6 +16,7 @@ class SlideSideMenuState extends SideMenuState {
             top: statusBarHeight + (widget.closeIcon?.size ?? 25.0) * 2,
             width: min(size.width * 0.70, widget.maxMenuWidth),
             right: widget._inverse == 1 ? null : 0,
+            bottom: 0,
             child: widget.menu,
           ),
           _getCloseButton(statusBarHeight),
